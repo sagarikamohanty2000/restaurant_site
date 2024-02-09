@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import Card from './UI/Card';
 import './OrderForm.css';
 
-const OrderForm = () => {
+const OrderForm = (props) => {
   const [orderId, setOrderId] = useState("");
   const [dishName, setDishName] = useState("");
   const [dishPrice, setDishPrice] = useState("");
   const [tableNo, setTableNo] = useState("Table 1");
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
     const dishDetails = {
       orderId: orderId,
       dishName: dishName,
       dishPrice: dishPrice,
       tableNo: tableNo,
     };
-
+    props.orderDetails(dishDetails);
     setOrderId("");
     setDishName("");
     setDishPrice("");
@@ -35,6 +36,7 @@ const OrderForm = () => {
 
   const tableNoHandler = (event) => {
     setTableNo(event.target.value);
+    console.log(event.target.value);
   };
 
   return (
@@ -42,9 +44,9 @@ const OrderForm = () => {
       <Card className="form-body">
         <form onSubmit={onSubmitHandler}>
           <div className="dish-labels">
-            <label for="orderId" id='orderIdLabel'>Unique Order ID</label>
-            <label for="dish" id='dishLabel'>Dish Name</label>
-            <label for="dishPrice" id='dishPriceLabel'>Dish Price</label>
+            <label htmlFor="orderId" id='orderIdLabel'>Unique Order ID</label>
+            <label  htmlFor="dish" id='dishLabel'>Dish Name</label>
+            <label  htmlFor="dishPrice" id='dishPriceLabel'>Dish Price</label>
           </div>
           <div className="input-field1">
             <input
@@ -68,11 +70,11 @@ const OrderForm = () => {
           </div>
 
           <div className="table-label">
-            <label for="table-number">Table No</label>
+            <label  htmlFor="table-number">Table No</label>
               <select value={tableNo} onChange={tableNoHandler}>
-                <option value="2022">Table 1</option>
-                <option value="2021">Table 2</option>
-                <option value="2020">Table 3</option>
+                <option value="Table 1">Table 1</option>
+                <option value="Table 2">Table 2</option>
+                <option value="Table 3">Table 3</option>
               </select>
               </div>
             <button type="submit">Add to Bill</button>
