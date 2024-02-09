@@ -1,0 +1,59 @@
+
+.form-body{
+    width:75%;
+    height:270px;
+    display: inline-flex;
+    padding: 30px;
+}
+label {
+
+    margin-left : 100px;
+    font-size: larger;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight:600;
+    color: rgb(103, 48, 18);
+}
+
+input {
+
+    margin-left : 60px;
+    width : 300px;
+    border-radius: 8px;
+    height:25px;
+}
+.dish-labels{
+    margin: 20px;
+}
+
+#dishLabel{
+    margin-left: 230px;
+}
+
+#dishPriceLabel {
+    margin-left: 270px;
+}
+
+.table-label{
+    margin-top: 80px;
+    margin-left: 20px;
+    display: inline-flex;
+}
+select{
+    width: 100px;
+    height: 25px;
+    margin-left: 15px;
+    border-radius: 4px;
+    background-color: rgb(255, 244, 232);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     font-weight: 600;
+} 
+
+button{
+    margin-left: 580px;
+    width:200px;
+    height: 30px;
+    color: beige;
+    background-color: rgb(37, 17, 3);
+    box-shadow: black;
+    border-radius: 8px;
+}
